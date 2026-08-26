@@ -263,3 +263,7 @@ also what you want if you ever swap `InMemorySaver` for SQLite or Postgres.
    cap for a one-day MVP rather than an oversight.
 5. **Verdict calibration is unmeasured.** T2 proves the system *can* say no on an obviously bad
    idea. It does not prove it says no at the *right* rate; that needs a labelled dataset.
+
+<p align="center">
+  Made with ❤️ by IdeaFoundry Team
+</p>
