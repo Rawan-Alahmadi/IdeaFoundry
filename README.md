@@ -19,7 +19,7 @@ synthesises one verdict, then **pauses again** before writing anything to perman
 | | |
 |---|---|
 | **Name** | Ghaidaa Alshareef, Rawan Alahmadi, Mayar Alhindi |
-| **Programme** | Building Agentic AI Systems — SDAIA Academy |
+| **Programme** | Building Agentic AI Systems |
 | **Delivered by** | SDAIA Academy |
 | **Trainer** | Mohammed Albeladi |
 | **Cohort/session dates** | 23 August - 27 August 2026 |
