@@ -2,7 +2,7 @@
 
 **An idea-validation analyst team for first-time founders in Saudi Arabia.**
 
-A founder submits an early-stage business idea. A **Supervisor** agent reads it, decides — by
+A founder submits an early-stage business idea. A **Supervisor** agent reads it, decides by
 calling a real handoff tool, which specialist analysts the idea actually needs,
 **pauses for the founder to confirm**, then runs those analysts in parallel.
 They ground their work in official **Monsha'at** guidance and live **web search**, and label
@@ -40,12 +40,8 @@ they fail in three different ways.
    which local players already occupy the space, or what Monsha'at requires. Answers calibrated
    to San Francisco, delivered to a market they do not describe.
 3. **The output is not defensible.** Even when the answer is right, the founder cannot tell
-   which sentence came from a source and which the model invented — so it cannot be shown to an
+   which sentence came from a source and which the model invented so it cannot be shown to an
    accelerator, an investor, or a co-founder.
-
-Every component below answers one of those three failures. Nothing is here because a rubric
-asked for it.
-
 ---
 
 ## How it works
@@ -129,7 +125,7 @@ Three rules make the grounding rate impossible:
 | Secret | Required | Free at |
 |---|---|---|
 | `GROQ_API_KEY` | **yes** | <https://console.groq.com> |
-| `LANGSMITH_API_KEY` *or* `LANGCHAIN_API_KEY` | **yes**, for | <https://smith.langchain.com> |
+| `LANGSMITH_API_KEY` *or* `LANGCHAIN_API_KEY` | **yes** | <https://smith.langchain.com> |
 | `SERPER_API_KEY` | optional | <https://serper.dev> — skip it and search falls back to DuckDuckGo |
 
 Keys are resolved **Colab Secrets → environment variable → typed prompt**, so no key is ever
@@ -235,23 +231,8 @@ clean exit if it is still too vague.
 
 **Task boundaries speak plain dicts.** Every `@task` argument and return value is checkpointed,
 and LangGraph warns on deserializing unregistered classes. The logic works in Pydantic models;
-the task wrappers exchange `.model_dump()` dicts, keeping the checkpoint plain JSON — which is
+the task wrappers exchange `.model_dump()` dicts, keeping the checkpoint plain JSON which is
 also what you want if you ever swap `InMemorySaver` for SQLite or Postgres.
-
----
-
-## Rubric map
-
-| § | Section | Pts | Where |
-|---|---|---|---|
-| 1 | Agent Fundamentals | 15 | tools + the LLM-driven tool loop; `with_structured_output` throughout |
-| 2 | Multi-Agent / Routing | 15 | handoff tools + ledger, Demo 3 |
-| 3 | RAG Pipeline | 15 | load → split → embed → store → retrieve, plus the Agentic RAG justification |
-| 4 | Context & State | 15 | Store, §5 checkpointer, **T3** |
-| 5 | Human-in-the-Loop | 10 | three gates, Demo 1 & Demo 2 |
-| 6 | Functional API & Errors | 15 | `@task`/`@entrypoint`, §4.4 RetryPolicy, **T4** |
-| 7 | Workflow Pattern | 10 |  Orchestrator-Worker, named and justified |
-| 8 | LangSmith | 5 | tracing setup, §8 what the trace actually showed |
 
 ---
 
