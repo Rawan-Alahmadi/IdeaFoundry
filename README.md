@@ -240,10 +240,8 @@ also what you want if you ever swap `InMemorySaver` for SQLite or Postgres.
 
 ```
 .
-├── ideas_analysts_capstone_v2.ipynb   # the deliverable — run top to bottom
-├── PRD_v2.md                          # product requirements
+├── ideafoundry_capstone.ipynb                          
 ├── README.md
-├── requirements.txt
 └── .gitignore
 ```
 
