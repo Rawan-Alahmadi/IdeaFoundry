@@ -1,0 +1,21 @@
+# Python temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files and API Keys (VERY IMPORTANT)
+.env
+.env.*
+secrets.json
+
+# Environment/Virtualenv folders
+venv/
+env/
+.venv/
+
+# OS generated files
+.DS_Store
+Thumbs.db
